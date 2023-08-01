@@ -39,3 +39,52 @@ Ambas son metricas validas, solo que cada una de esas metricas de mostratá dife
 - Reconocer patrones en los datos.
 - Descubrir a quienes usan estas herramientas con fines nefastos.
 
+## Flujo de trabajo en Data Science
+
+![Flujo de trabajo](./src/flujo.jpg)
+
+En la imagen anterior te puedes percatar que hay una linea de cajas verdes que define el flujo de trabajo en data science leyendose de izquierda a derecha
+
+## Medias de Tendencia Central
+
+Imaginate un salon con estudiantes, estos tienen diferentes edades, y alguna persona te dice que "Oye, en ese salon la edad promedio de los estudiantes es de 7 años", Eso te puede dar varios pensamientos, como por ejemplo, Son estudiantes jovenes pero eso no quiere decir que todos estudiantes tengan 7 años, sino, que sus edades son mas o menos cercanas a 7 años
+
+A lo queremos llegar con esto es a que las medidas de tendencia central son una manera de resumir informacion
+
+Esto tiene sus desventajas y ventajas, puedes extraer informacion valiosa, como por ejemplo suponer que son estudiantes jovenes, la desventaja es, que pasa si hay estudiantes que son demasiado viejos o jovenes en ese salon, el promerio no puede dar informacion de eso, y crees que esos estudiantes estan afectando mi medida de promedio?
+
+Hay que recordar que siempre que querramos "resumir informacion" estamos haciendo invisibles ciertos datos
+
+### ¿Tendencia Central?
+
+Existen tres medidas de tendencia central
+
+- Media (promedio)
+
+Esta tendencia tiene que ver con una nocion de centralidad de los datos, es resumo de los datos
+
+- Mediana (dato central)
+
+Este es el dato que esta en la mitad, a los dos lados tiene la misma cantidad de gatos
+
+- Moda (dato mas repetido)
+
+Este es simplemtente el dato que mas se repite
+
+## Diagrama de frecuencias
+
+![diagrama](./src/diagrama.PNG)
+
+Tenemos una lista de estudiantes, en este caso 20, con estos podemos considerar que son estudiantes mas viejos de 16, 17, 18 y queremos contar con la frecuencLa segunda tabla de frecuencias la construimos asi; la edad mas poequeña tienen 15 años y contar cuantos de ellos tienen 15 años, en este caso nos da 3 entonces en la tabla de frecuencias y asi con las otras edades
+ia que se repite cada edad
+
+
+Ahora, viendo ese diagrama de frecuencia podemos decir que la **Moda** es 18 años, eso es facil, pero ahora como hacemos con la media y la mediana?
+
+### ¿Cuando usar cuál?
+
+- La media es susceptible a varios atípicos.
+
+Si tenemos un cojunto de personas todas tiene edades muy cercanas, la adicion de una persona con una edad mucho mayor, la medida resultante se va a ver fuertemente afectada por esa persona mayor, el ejemplo seria el mismo si es mas joven
+
+- La moda no aplica para datos numéricos continuos
