@@ -91,4 +91,8 @@ Si tenemos un cojunto de personas todas tiene edades muy cercanas, la adicion de
 
 ## Metáfora de Bill Gates en un bar
 
-**_{X<sub>2</sub>}_**
+**_{X<sub>1</sub>, X<sub>2</sub>, X<sub>3</sub>, X<sub>4</sub>, ..., X<sub>n</sub>}_ DataSet**
+
+Este dataset se un conjunto que tiene n elementos distintos, como edades, salarios, etc. Si quisiera sacar el promedio de ese dataset
+
+**Media = \bar{X}**
