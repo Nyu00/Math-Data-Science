@@ -88,3 +88,7 @@ Ahora, viendo ese diagrama de frecuencia podemos decir que la **Moda** es 18 añ
 Si tenemos un cojunto de personas todas tiene edades muy cercanas, la adicion de una persona con una edad mucho mayor, la medida resultante se va a ver fuertemente afectada por esa persona mayor, el ejemplo seria el mismo si es mas joven
 
 - La moda no aplica para datos numéricos continuos
+
+## Metáfora de Bill Gates en un bar
+
+**_{X<sub>2</sub>}_**
