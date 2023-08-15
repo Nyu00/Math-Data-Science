@@ -91,8 +91,35 @@ Si tenemos un cojunto de personas todas tiene edades muy cercanas, la adicion de
 
 ## Metáfora de Bill Gates en un bar
 
+
+
 **_{X<sub>1</sub>, X<sub>2</sub>, X<sub>3</sub>, X<sub>4</sub>, ..., X<sub>n</sub>}_ DataSet**
 
-Este dataset se un conjunto que tiene n elementos distintos, como edades, salarios, etc. Si quisiera sacar el promedio de ese dataset
+Este dataset se un conjunto que tiene n elementos distintos, como edades, salarios, etc. Si quisiera sacar el promedio de ese dataset se hace de la siguiente manera:
 
-**Media = \bar{X}**
+![media](./src/media-formula-normal.jpg)
+
+La **Media** de este dataset se define como = X̅
+
+Esta se calcula como sumar todos los valores del conjunto o Dataset, asi:
+
+X<sub>1</sub>+ X<sub>2</sub>+ X<sub>3</sub>+ X<sub>4</sub>+ ...+ X<sub>n</sub>
+
+Y luego el resultado de esa suma, la dividimos por la cantidad de datos, asi:
+
+```bash
+1/n
+```
+
+Tambien existe una forma contraria de escrivir esta suma
+
+![media-resumida](./src/media-formula-compacta.jpg)
+
+La **mediana** tiene algo peculiar, como queremos definir el dato central, tenemos que tomar en consideracion si la cantidad de datos de nuestro dataset es par o impar, porque si es par tendremos que tomar los dos datos que esten en el medio y si es impar tomaremos un unico dato del medio
+
+
+
+
+
+
+
