@@ -115,7 +115,25 @@ Tambien existe una forma contraria de escrivir esta suma
 
 ![media-resumida](./src/media-formula-compacta.jpg)
 
+Esta formula en pocas palabras quiere decir que estoy recorriendo todos los valores de X (Nuestro dataset)
+
 La **mediana** tiene algo peculiar, como queremos definir el dato central, tenemos que tomar en consideracion si la cantidad de datos de nuestro dataset es par o impar, porque si es par tendremos que tomar los dos datos que esten en el medio y si es impar tomaremos un unico dato del medio
+
+![Formula median](./src/median.jpg)
+
+Ahora imaginate un bar, donde hay 10 hombres bebiendo, cada unos de esos hombre tienen un salario, en este ejemplo supondremos que cada unos de estos sujetos tienen curiosamente el mismo salario que sera 35.000$ al año, ahora con estos datos ya podemos calcular el promedio, la media y la moda todos seria 35.000$
+
+Podriamos decir que en ese bar el salario promedio de la personas que van en de 35000$ anuales
+
+Pero, ahora llega Bill Gates y se sienta al lado de los 10 señores, supongas que el tiene un salario anual de 1.000.000$ 
+
+Si ahora quisieramos calcular el salarios promedio de la personas de aquel bar los valores cambiarian mucho
+
+![formula bill gates](./src/formula-billgates.jpg)
+
+El promedio sería ahora 122,727.27 $, o sea 87,727 más por una única persona muy alejada del promedio
+
+Ahora la mediana, si agarramos los valores del medio (estando los salarios organizados) el valor será una aproximación más realista, ya que esta no está tan sesgada por valores atípicos como en ente caso el de Bill Gates
 
 
 
