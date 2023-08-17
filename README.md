@@ -135,6 +135,24 @@ El promedio sería ahora 122,727.27 $, o sea 87,727 más por una única person
 
 Ahora la mediana, si agarramos los valores del medio (estando los salarios organizados) el valor será una aproximación más realista, ya que esta no está tan sesgada por valores atípicos como en ente caso el de Bill Gates
 
+![med](./src/med.jpg)
+
+## Medidas de tendencia central PY
+
+![Formulas Bonitas](./src/formulas-bonitas.jpg)
+
+
+```python
+import pandas as pd
+
+df = pd.read_cvs('cars.csv')
+
+```
+
+
+ 
+  
+
 
 
 
