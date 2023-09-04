@@ -75,7 +75,7 @@ Este es simplemtente el dato que mas se repite
 
 ![diagrama](./src/diagrama.PNG)
 
-Tenemos una lista de estudiantes, en este caso 20, con estos podemos considerar que son estudiantes mas viejos de 16, 17, 18 y queremos contar con la frecuencLa segunda tabla de frecuencias la construimos asi; la edad mas poequeña tienen 15 años y contar cuantos de ellos tienen 15 años, en este caso nos da 3 entonces en la tabla de frecuencias y asi con las otras edades
+Tenemos una lista de estudiantes, en este caso 20, con estos podemos considerar que son estudiantes mas viejos de 16, 17, 18 y queremos contar con la frecuencia segunda tabla de frecuencias la construimos asi; la edad mas poequeña tienen 15 años y contar cuantos de ellos tienen 15 años, en este caso nos da 3 entonces en la tabla de frecuencias y asi con las otras edades
 ia que se repite cada edad
 
 
@@ -135,7 +135,31 @@ El promedio sería ahora 122,727.27 $, o sea 87,727 más por una única person
 
 Ahora la mediana, si agarramos los valores del medio (estando los salarios organizados) el valor será una aproximación más realista, ya que esta no está tan sesgada por valores atípicos como en ente caso el de Bill Gates
 
-![med](./src/med.jpg)
+![med](./src/med.jpg){:width="50%"}
+
+## Medidas de dispersion
+
+En temas pasados dijimos que en un grupo de estudiantes deciamos que el promedio de edad era 7 años, pero puede que haya estudiantes muy viejos o muy jovenes en "comparacion al promedio", bueno ahora necesito tener una nocion matematica de como medir esa dispersión de las edades (Datos), para estas existen 3 definiciones fundamentales;
+
+- Rango
+- Rango intercuartil
+- Desviacion Estandar
+
+![RRD](./src/rrd.jpg)
+
+Tenemos un histogramas con una forma de campana (o distribución gaussiana) con unos datos de ejemplo ahora para entender las medidas de dispercion debemos enterder esto;
+
+La manera mas rapida de medir un conjunto de datos es agarrar el valor minimo y el valor maximo, y restarlos, y esa medida es lo que llamanos el **rango**
+
+El **Rango intercuartil** se basa en los cuartiles, estos tienen como proposito definir 4 grupos de datos de manera uniforme o sea la misma cantidas de datos en cada unos de estos grupos de datos (cuartiles) como sale en la parte de abajo del ejemplo
+
+En este prodriamos agarra la mediana que ya conocemos y este seria el Q2, ¿porque? porque nosotros queremos las cuartas partes ahora esas dos mitades las partimos por la mitas y donde queda la linea de divicion los definiremos como Q1 y Q3
+
+La distancia entre el Q1 y el Q3 es el **Rango intercuartil**
+
+###### Nota: IQR con las siglas de ango intercuartil en  ingles
+
+## Desviacion estándar
 
 ## Medidas de tendencia central PY
 
