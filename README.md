@@ -157,21 +157,122 @@ En este prodriamos agarra la mediana que ya conocemos y este seria el Q2, ¿porq
 
 La distancia entre el Q1 y el Q3 es el **Rango intercuartil**
 
-###### Nota: IQR con las siglas de ango intercuartil en  ingles
+###### Nota: IQR con las siglas de rango intercuartil en ingles
 
 ## Desviacion estándar
 
-## Medidas de tendencia central PY
+Tenemos un dataset aleatorio, la media de esas data set set la suma de todo los valores divido por la cantidad de valores, de la siguiente manera:
+
+![media](./src/media.jpg)
+
+Los primeros caracteres significan lo mismo "la media"
+
+Ahora imaginate una grafica con los valores organizados horizonantalmente, imaginemos que el μ (media) es cercado al medio 
+
+![mediaerror](./src/masnemoserror.jpg)
+
+Una buena medida de dispercion es calcular la variacion de cada punto, lo que pasaria es que algunos saldrian negativo o positivos en comparacion al μ, y eso esta mal, para evitarlo
+
+Tomamos cada unos de los valores y la diferencia con el μ, su resultado lo elevamos al cuadrado, despues hacemos esos con todos los valores y lo dividimos por la cantidad de elementos
+
+Esto nos daria lo que conocemos como la varianza o sigma al cuadrado
+
+### Distrubucion normal
+
+![normdist-1](./src/normdist-1.jpg)
+
+El σ (desviacion estandar) el representa la disperciones en este caso (gausianamente), cuando consideramos al rededor de la media y la mediana, 3 distancias hacia adelante y 3 distancias hacia atras de la μ, de esa manera estariamos tomando en cosideracion un 99.72% de los datos
+
+![9972](./src/9972.jpg)
+
+En terminos de rango intercuartil seria asi:
+
+min = Q¹ - 1.5IQR
+max = Q¹ - 1.5IQR
+
+## Medidas de dispersión PY
 
 ![Formulas Bonitas](./src/formulas-bonitas.jpg)
 
+```python
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('cars.csv')
+```
 
 ```python
-import pandas as pd
-
-df = pd.read_cvs('cars.csv')
-
+# Desviación estandar
+df['price_usd'].std()
 ```
+```bash
+6428.1520182029035
+```
+
+```python
+# Rango = valor max - valor min
+rango = df['price_usd'].max() - df['price_usd'].min()
+rango
+```
+```bash
+49999.0
+```
+
+```python
+# Quartiles
+median = df['price_usd'].median()
+Q1 = df['price_usd'].quantile(q=0.25)
+Q3 = df['price_usd'].quantile(q=0.75)
+min_val = df['price_usd'].quantile(q=0)
+max_val = df['price_usd'].quantile(q=1.0)
+print(min_val, Q1, median, Q3, max_val)
+```
+```bash
+1.0 2100.0 4800.0 8990.0 50000.0
+```
+
+```python
+iqr = Q3 - Q1
+iqr
+```
+```bash
+6890.0
+```
+
+Límites para detección de outliers (datos simetricamente distribuidos)
+Datos entre 
+
+
+```python
+minlimit = Q1 - 1.5*iqr
+maxlimit = Q3 + 1.5*iqr
+print('rango para detección de outliers: {}, {}'.format(minlimit, maxlimit))
+```
+```bash
+rango para detección de outliers: -8235.0, 19325.0
+```
+
+```python
+sns.set(rc={'figure.figsize':(11.7,8.27)})
+f, (ax_hist, ax_box) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.6, .4)})
+sns.histplot(df['price_usd'], ax=ax_hist)
+sns.boxplot(df['price_usd'], ax=ax_box)
+ax_hist.set(xlabel='')sns.set(rc={'figure.figsize':(11.7,8.27)})
+f, (ax_hist, ax_box) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.6, .4)})
+sns.histplot(df['price_usd'], ax=ax_hist)
+sns.boxplot(df['price_usd'], ax=ax_box)
+ax_hist.set(xlabel='')
+```
+
+![grafico2](./src/grafico1.jpg)
+
+Es posible calcular varios box-plot separando por una cierta variable categórica:
+
+```python
+sns.boxplot(x = 'engine_fuel', y = 'price_usd', data = df)
+```
+![grafico2](./src/grafico2.jpg)
 
 
  
