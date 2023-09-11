@@ -192,7 +192,11 @@ max = Q¹ - 1.5IQR
 
 ## Medidas de dispersión PY
 
-![Formulas Bonitas](./src/formulas-bonitas.jpg)
+Dataset (https://www.kaggle.com/lepchenkov/usedcarscatalog)
+
+Usaremos las librerias pandas, meatplotlib y seaborn y usarmos de dataset de carros
+
+creamos un dataframe con pandas sobre nuestro dataset y lo llamamos df
 
 ```python
 import pandas as pd 
@@ -201,23 +205,26 @@ import seaborn as sns
 
 df = pd.read_csv('cars.csv')
 ```
+Calcularesmos la desviacion estandar de la comunla de datos de price_usd que contiene el precio de los autos usando el metodo .std()
 
 ```python
 # Desviación estandar
 df['price_usd'].std()
-```
-```bash
+#/////////////////////////////////////////
 6428.1520182029035
 ```
+
+ahora queremos definir el rango de esta columna, esto se hace de la siguiente manera
 
 ```python
 # Rango = valor max - valor min
 rango = df['price_usd'].max() - df['price_usd'].min()
 rango
-```
-```bash
+#/////////////////////////////////////////
 49999.0
 ```
+
+ahora defenimos por quartiles, el valor minimo y el valor maximo
 
 ```python
 # Quartiles
@@ -227,38 +234,35 @@ Q3 = df['price_usd'].quantile(q=0.75)
 min_val = df['price_usd'].quantile(q=0)
 max_val = df['price_usd'].quantile(q=1.0)
 print(min_val, Q1, median, Q3, max_val)
-```
-```bash
+#/////////////////////////////////////////
 1.0 2100.0 4800.0 8990.0 50000.0
 ```
+
+Y el rango inter cuartil o IQR
 
 ```python
 iqr = Q3 - Q1
 iqr
-```
-```bash
+#/////////////////////////////////////////
 6890.0
 ```
 
 Límites para detección de outliers (datos simetricamente distribuidos)
-Datos entre 
+Datos entre Q₁ - 1.5 x IQR y Q₃ + 1.5 x IQR
 
 
 ```python
 minlimit = Q1 - 1.5*iqr
 maxlimit = Q3 + 1.5*iqr
 print('rango para detección de outliers: {}, {}'.format(minlimit, maxlimit))
-```
-```bash
+#/////////////////////////////////////////
 rango para detección de outliers: -8235.0, 19325.0
 ```
 
+Esto no tiene sentido como nos referimos a variables de precio, esto pasa cuando intentamos el metodo de cuando el dataframe tiene una distribucion gausiana en un dataframe que no lo es, para hacerlo con distribuciones no normales
+
 ```python
 sns.set(rc={'figure.figsize':(11.7,8.27)})
-f, (ax_hist, ax_box) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.6, .4)})
-sns.histplot(df['price_usd'], ax=ax_hist)
-sns.boxplot(df['price_usd'], ax=ax_box)
-ax_hist.set(xlabel='')sns.set(rc={'figure.figsize':(11.7,8.27)})
 f, (ax_hist, ax_box) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.6, .4)})
 sns.histplot(df['price_usd'], ax=ax_hist)
 sns.boxplot(df['price_usd'], ax=ax_box)
