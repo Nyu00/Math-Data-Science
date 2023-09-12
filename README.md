@@ -198,6 +198,7 @@ Usaremos las librerias pandas, meatplotlib y seaborn y usarmos de dataset de car
 
 creamos un dataframe con pandas sobre nuestro dataset y lo llamamos df
 
+
 ```python
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -205,7 +206,7 @@ import seaborn as sns
 
 df = pd.read_csv('cars.csv')
 ```
-Calcularesmos la desviacion estandar de la comunla de datos de price_usd que contiene el precio de los autos usando el metodo .std()
+Calcularemos la desviación estándar de la columna de datos de price_usd que contiene el precio de los autos usando el metodo .std()
 
 ```python
 # Desviación estandar
@@ -224,7 +225,7 @@ rango
 49999.0
 ```
 
-ahora defenimos por quartiles, el valor minimo y el valor maximo
+ahora definimos por cuartiles, el valor mínimo y el valor máximo
 
 ```python
 # Quartiles
@@ -247,7 +248,7 @@ iqr
 6890.0
 ```
 
-Límites para detección de outliers (datos simetricamente distribuidos)
+Límites para detección de outliers (datos simétricamente distribuidos)
 Datos entre Q₁ - 1.5 x IQR y Q₃ + 1.5 x IQR
 
 
@@ -259,7 +260,7 @@ print('rango para detección de outliers: {}, {}'.format(minlimit, maxlimit))
 rango para detección de outliers: -8235.0, 19325.0
 ```
 
-Esto no tiene sentido como nos referimos a variables de precio, esto pasa cuando intentamos el metodo de cuando el dataframe tiene una distribucion gausiana en un dataframe que no lo es, para hacerlo con distribuciones no normales
+Esto no tiene sentido como nos referimos a variables de precio, esto pasa cuando intentamos el metodo de cuando el dataframe tiene una distribución gausiana en un dataframe que no lo es, para hacerlo con distribuciones no normales
 
 ```python
 sns.set(rc={'figure.figsize':(11.7,8.27)})
@@ -278,13 +279,28 @@ sns.boxplot(x = 'engine_fuel', y = 'price_usd', data = df)
 ```
 ![grafico2](./src/grafico2.jpg)
 
+## Diagrama de dispersión
 
- 
-  
+Usaremos las librerias pandas y seaborn con una dataset iris que es un dataset que corresponde a atributos especiales de unas flores llamadas **iris** en tres especies diferentes
 
+```python
+import pandas as pd 
+import seaborn as sns
 
+iris = sns.load_dataset('iris')
 
+iris.head()
+```
 
+![iris-head](/src/iris-head.jpg)
 
+podemos ver características como longitud del sépalo, anchura del sépalo, longitud del pétalo, anchura del pétalo y especies 
 
+```python
+# scatterplot 
+sns.scatterplot(data=iris, x = 'sepal_length', y = 'petal_length', hue = 'species')
+```
 
+Aqui cada punto hace tiene un eje Y y X que hace referencia a las variables petal_length y sepal_length y separa cada unos de esos puntos por colores segun la categoria que lo llamamos el **Hue** en el codigo usando sns  
+
+![scatterplot](./src/scatterplot.jpg)
