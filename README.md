@@ -304,3 +304,35 @@ sns.scatterplot(data=iris, x = 'sepal_length', y = 'petal_length', hue = 'specie
 Aqui cada punto hace tiene un eje Y y X que hace referencia a las variables petal_length y sepal_length y separa cada unos de esos puntos por colores segun la categoria que lo llamamos el **Hue** en el codigo usando sns  
 
 ![scatterplot](./src/scatterplot.jpg)
+
+Ahora tambien podemos haciendolo de la siguiente manera podemos hacer un histograma o grafico de frecuencia cada unos de los eje X y Y
+
+```python
+sns.jointplot(data=iris, x = 'sepal_length', y = 'petal_length', hue = 'species')
+```
+
+![sns-histograma](./src/sns-histograma.jpg)
+
+Lo importante de este sector es entender el diagrama de dispercio por que este nos ayuda a ver posibles patrones entre dos varibles y encontrar posibles correlaciones
+
+## Procesamiento de datos
+
+El primer proceso que utiliza estadísticas y requiere elementos que ya hemos estudiado en clases previas, especialmente cuando se trata de datos numéricos, se llama **Escalamiento lineal**
+
+Porque debemos escalar o normalizar los datos? Resulta que los modelos de machine learning son son optimos siempre y cuando los atributos que se les da a ese modelo tengan las mismas dimenciones, por ejemplo no tendria sentido que yo tenga un atributo que vaya de 0 a 1 y otro que vaya de 1 a 1.000.000, lo hace insostenible porque los factores son medidos de formas distintas, quitando el hecho que se necesitaria mas computo, estos estan normalizados a un rango de -1 á 1
+
+##### OJO:
+los diferentes tipos de escalmeinto se usan siempre y cuando estan uniformemente más o menos distribuidos, de manera gauseana o normal
+
+Hay varios tipos de escalamiento
+
+- Escalamiento Min-Max
+
+Este escalamiento nos dice que cada dato lo tenemos que tranformar a un valor normalizado de ese dato
+
+La tranformacion seria esta
+
+![minmax](./src/min-max.png)
+
+
+
