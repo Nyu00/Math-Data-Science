@@ -332,7 +332,50 @@ Este escalamiento nos dice que cada dato lo tenemos que tranformar a un valor no
 
 La tranformacion seria esta
 
-![minmax](./src/min-max.png)
+![minmax](./src/min-max.jpg)
+
+- Escalamiento Clipping
+
+Es uno muy usado pero no muy recomendado
+
+Este nos deci que debemos tomar la distribucion y definimos 2 valores limite, los datos que esten dentro de ese rango no se ran cambiados mientras los que no esten, seran condensados
+
+- Z-Score
+
+Este es uno me los mas correctos porque toman en considerancion la desviacion de estandar
+
+Esta es su formula:
+
+![z-score](./src/z-score.jpg)
+
+Ahora para transformar datos cuando  no estas distribuidos de manera normal una usaremos **Transformación no lineal**
+
+Realmente lo que haremos es transformar los datos con una distrubucion no lineal en datos con una distrucion lineal para luego pasarle algunos de los escalamientos convencionales
+
+## Transformación no lineal
+
+
+Los usamos para dataset fuertemente sesgados o no simetricos
+
+Estos los usamos antes de hacer una escalacion para un modelo de ML
+
+Existen varios tipo como Logaritmos, Sigmoides, Polinomiales, etc.
+
+### Distribuion sesgada
+
+![distribucion sesgada](./src/distribuionsesgadajpg)
+
+Ahora vamos a ver como es efecto de una transformacion no lineal en terminos de una funcion no lineal, usaremos la tanhente hiperbolica
+
+![hiperbolica](./src/hiperbolica.jpg)
+
+![formulatan](./src/formulatanhente.jpg)
+
+La idea detras de esta tranformacion es que esta entre 1 y -1, lo queremos hacer es interpretar la X como los datos originales y la Y como los datos trandormados
+
+
+
+
 
 
 
