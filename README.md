@@ -420,12 +420,38 @@ encoder = preprocessing.OneHotEncoder(handle_unknow="ignore")
 encoder.fit(df[['engine_type']].values)
 
 encoder.transform([['gasoline'], ['diesel'], ['aceite']]).toarray()
-
 ```
 
 ![onehot](./src/onehot.jpg)
 
 # Correlaciones
+
+Como hemos visto en lo graficos de dispercion nos permite visualzar como variaba la variacion de varible sobre otras en nuestro conjunto de datos, y ver varias varibles que parecen que tienen el mismo compartamiento, ahí decimos que estan relacionadas, de manera informal que estan corelacionadas
+
+Entonces no tendria sentido usar las dos varibles porque las dos varibles esten aportando la misma informacion si su coorelaion es muy alta
+
+Por eso hau eliminar varios datos tomando en considerancion esos datos de correlacion
+
+En otro caso cuando tenemos variables categorias y las convertimos a numeros eso extande el espacion de atributos numericos, hay tambien podriamos ver si eciste algun tipo de correlacion y eliminar ciertos datos
+
+![formlavarianza](./src/formlavarianza.jpg)
+
+El concepto de correlacion tiene que ver con medir las deviaciones o variaciones un una variable x en relacion a otra variable
+
+nosotros agarramos las variaciones de cada elemento X que tiene de su elemento, lo multiplicamos por x,  ahora agarramos las variaciones de cada elemento Y que tiene de su elemento
+
+Es como si tuvieramos dos listas una de las variables x y una de las variables y 
+
+![cov](./src/cov.jpg)
+
+Algo para tener prensente es que enten en direrenten proporciones las Y podrias llegar hasta el millon y las X llegar solo al 5
+
+por esto es que cada vez que hagamos la diferencia Yⁱ y el promedio de las Y las debemos dividir por la desviacion estandar, para entandarizar las variables
+
+Esto lleva a un nuevo concepto llamada 
+
+
+
 
 
 
