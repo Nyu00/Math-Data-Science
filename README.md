@@ -359,7 +359,7 @@ Los usamos para dataset fuertemente sesgados o no simetricos
 
 Estos los usamos antes de hacer una escalacion para un modelo de ML
 
-Existen varios tipo como Logaritmos, Sigmoides, Polinomiales, etc.
+Existen varios tipo como Logaritmos, Sigmoides, Polinomiales, etc para transformar los datos en lineales
 
 ### Distribuion sesgada
 
@@ -373,9 +373,59 @@ Ahora vamos a ver como es efecto de una transformacion no lineal en terminos de 
 
 La idea detras de esta tranformacion es que esta entre 1 y -1, lo queremos hacer es interpretar la X como los datos originales y la Y como los datos trandormados
 
+### Pipelines de procesamiento para variables categóricas
+
+Existen dos metodos para procesar variables categoricas de manera facilmente interpretables
+
+- Dummy
+Esta es una representacion compacta por eso es mejor usarla cuando tus inputs son linealmente independientes (no tienen un grado de relacion significativa)
+
+- One-hot
+Es uma mapeo mas grande que puede resultar en atriutos numericos que van a ser mas extensos para las variables categoricas
+
+La diferencia que tienes este sobre el dummy es que este permite incluir categorias que no estaban en el data set inicialmente
 
 
+Ambos sigues las reglas de tienes que mapear numericamente las categorias de cadenas de texto
 
+Estas categorias representan algo llamado no ordinal (porque no tiene algun tipo de orden)
+
+![one-hot](./src/one-hot.jpg)
+
+Los podemos aplicar en python de la siguiente forma
+
+```py
+import pandas as py
+
+df = pd.read_csv('cars.csv')
+
+pd.get_dummies(df["engine_type"])
+
+```
+
+![dummy](./src/dummy.jpg)
+
+Aqui este nos crea tres columnas porque solo existen 3 tipos de motor, diesel, electricos y a gasolina, cuando en carro en cuestion especifique que tipo de motor tiene tendra un 1 en la comundo del tipo de motor
+
+en el ejemplo de la imagen solo tiene gasolina pero es solo porque es el mas comun
+
+```py
+import sklearn.preprocessing as preprocessiing
+
+
+# Creamos un metodo codifacion de variables categoricas (texto)
+# Le daremos el argumento de handle_unknow que sirve para manejar categorias nuevas que no estaban anteriormente contempladas
+encoder = preprocessing.OneHotEncoder(handle_unknow="ignore")
+
+encoder.fit(df[['engine_type']].values)
+
+encoder.transform([['gasoline'], ['diesel'], ['aceite']]).toarray()
+
+```
+
+![onehot](./src/onehot.jpg)
+
+# Correlaciones
 
 
 
